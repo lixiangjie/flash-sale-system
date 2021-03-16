@@ -53,6 +53,10 @@ token 写入到cookie，token 与 userinfo 存入redis，跳转时 cookie 加入
 uuid->token->cookie->session
            ->redis
 
+登录成功生成sessionId：类似token，表示用户，写到cookie中，传递给客户端，
+客户端随后的访问中在cookie中上传token，服务端拿到token后取到用户对应的session信息。
+
+
 
 两次MD5
 	1.用户端：PASS = MD5(明文+固定salt)
